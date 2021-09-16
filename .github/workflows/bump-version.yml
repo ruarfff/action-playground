@@ -25,4 +25,4 @@ jobs:
           echo ::set-output name=version::"$(echo ${LATEST_VERSION:1} | sed -e "s#$RE#\1#")"
       - uses: actions-ecosystem/action-push-tag@v1
         with:
-          tag: ${{ steps.get-major-version.outputs.version }}
+          tag: "v${{ steps.get-major-version.outputs.version }}"
