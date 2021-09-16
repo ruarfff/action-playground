@@ -41,6 +41,11 @@ jobs:
           URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs
           echo $URL
 
+          curl \
+            -X DELETE \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            $URL/$TAG
 
           curl \
             -X POST \
