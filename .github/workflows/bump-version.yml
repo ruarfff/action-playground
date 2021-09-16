@@ -18,7 +18,7 @@ jobs:
           WITH_V: true
       - name: Update major tag
         env:
-          LATEST_VERSION: ${{ step.bump-version.outputs.tag }}
+          LATEST_VERSION: ${{ steps.bump-version.outputs.tag }}
         run: |
           echo "{LATEST_VERSION}"
           LATEST_MAJOR_VERSION=$(echo ${LATEST_VERSION:1} | sed -e "s#$RE#\1#")
