@@ -42,5 +42,5 @@ jobs:
             -X POST \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d "ref=refs/tags/$TAG" -d "sha="$commit"            
+            -d "ref=refs/tags/$TAG" -d "sha=$commit"            
             "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs" \
