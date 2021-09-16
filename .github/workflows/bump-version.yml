@@ -24,4 +24,4 @@ jobs:
           echo "${LATEST_VERSION}"
           LATEST_MAJOR_VERSION=$(echo ${LATEST_VERSION:1} | sed -e "s#$RE#\1#")
           echo "${LATEST_MAJOR_VERSION}"
-          git push origin "refs/tags/v${LATEST_MAJOR_VERSION}"
+          git push origin "v${LATEST_MAJOR_VERSION}"
