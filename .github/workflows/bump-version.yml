@@ -28,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: "v${{ steps.get-major-version.outputs.version }}"
         run: |
-          git tag -d $TAG
+          git tag -d $TAG || true
           git tag $TAG                   
           commit=$(git rev-parse HEAD)
 
