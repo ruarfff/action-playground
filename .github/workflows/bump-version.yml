@@ -45,7 +45,7 @@ jobs:
             -X DELETE \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
-            $URL/$TAG
+            $URL/tags/$TAG
 
           curl \
             -X POST \
