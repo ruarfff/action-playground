@@ -42,10 +42,10 @@ jobs:
             -X POST \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs" \   
             -d @- << EOF
             {
               "ref": "refs/tags/$TAG",
               "sha": "$commit"
             }
             EOF
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs" \
