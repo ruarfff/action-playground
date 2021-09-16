@@ -35,6 +35,9 @@ jobs:
 
           # get current commit hash
           commit=$(git rev-parse HEAD)
+
+
+          echo $GITHUB_REPOSITORY
           curl \
             -X POST \
             -H "Authorization: token $GITHUB_TOKEN" \
