@@ -1,0 +1,13 @@
+name: Release
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Release
+        uses: softprops/action-gh-release@fb0163a75bee697a9cfec2c931801de7c7f10042
+        if: startsWith(github.ref, 'refs/tags/')

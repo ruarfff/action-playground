@@ -1,0 +1,22 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@9885a4f9af674ba472de91fb3c0cb033ecb32b7e
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+      - name: Update major tag
+        env:
+          LATEST_VERSION: ${{ step.build.outputs.tag }}
+        run: |
+          echo "{LATEST_VERSION}"
