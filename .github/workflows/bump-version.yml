@@ -29,15 +29,10 @@ jobs:
           TAG: "v${{ steps.get-major-version.outputs.version }}"
         run: |
           git tag -d $TAG
-          git tag $TAG
-          # get current commit hash for tag
-          tag_commit=$(git rev-list -n 1 $TAG)
-
-          # get current commit hash
+          git tag $TAG                   
           commit=$(git rev-parse HEAD)
 
 
-          echo $GITHUB_REPOSITORY
           URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs
           echo $URL
 
