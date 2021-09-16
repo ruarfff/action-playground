@@ -28,8 +28,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: "v${{ steps.get-major-version.outputs.version }}"
         run: |
+          git tag $TAG
           # get current commit hash for tag
-          tag_commit=$(git rev-list -n 1 $tag)
+          tag_commit=$(git rev-list -n 1 $TAG)
 
           # get current commit hash
           commit=$(git rev-parse HEAD)
