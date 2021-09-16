@@ -41,6 +41,7 @@ jobs:
           URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs
           echo $URL
           DATA='{"ref": "'"refs/tags/$TAG"'", "sha"="'"$commit"'"}'
+          echo $DATA
 
 
           curl \
@@ -48,4 +49,4 @@ jobs:
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
             $URL \
-            -d ${DATA}
+            -d $DATA
