@@ -40,7 +40,7 @@ jobs:
           echo $GITHUB_REPOSITORY
           URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs
           echo $URL
-          DATA='{"ref": "'"refs/tags/$TAG"'", "sha"="'"$commit"'"}'
+          DATA='{"ref":"'"refs/tags/$TAG"'", "sha":"'"$commit"'"}'
           echo $DATA
 
 
